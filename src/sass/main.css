@@ -804,6 +804,8 @@ footer .last a {
   max-width: 600px;
   margin: auto;
   border-radius: 50%;
+  display: flex;
+  justify-content: center;
 }
 .about .container .img img {
   border-radius: 50%;
@@ -843,20 +845,6 @@ footer .last a {
 }
 .about .container .box .groub-btn .btn {
   margin-left: 0;
-}
-.about .wave {
-  position: absolute;
-  bottom: calc(-100% + 187px);
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  transform: scaleY(-1);
-  pointer-events: none;
-}
-@media (max-width: 1200px) {
-  .about .wave {
-    display: none;
-  }
 }
 
 .Services {

@@ -734,6 +734,7 @@ footer{
     max-width: 600px;
     margin: auto;
     border-radius: 50%;
+    display: flex; justify-content: center;
     img{
       border-radius: 50%;
       width:100% ;
@@ -777,18 +778,7 @@ footer{
   }
 
 }
-.wave{
-  position: absolute;
-  bottom: calc(-100% - -187px);
-  left: 0;
-  width: 100%;
-  z-index: -1;
-  transform: scaleY(-1);
-  pointer-events: none;
-  @media (max-width:1200px) {
-    display: none;
-  }
-}
+
 }
 
 .Services{
