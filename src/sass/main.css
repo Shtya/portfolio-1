@@ -1013,26 +1013,46 @@ footer .last a {
 .Skills .container .boxes {
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   max-width: 1000px;
   margin: auto;
 }
 .Skills .container .boxes .box {
-  padding: 10px 20px;
+  padding: 20px 20px;
   background: rgba(255, 255, 255, 0.0666666667);
   box-shadow: 2px 2px 10px rgba(17, 17, 17, 0.2666666667);
+}
+.Skills .container .boxes .box .group {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .Skills .container .boxes .box .group {
+    grid-template-columns: 100px 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .Skills .container .boxes .box .group {
+    grid-template-columns: 1fr;
+  }
 }
 .Skills .container .boxes .box .top {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
   position: relative;
 }
 .Skills .container .boxes .box .top span {
   text-transform: uppercase;
   font-size: 18px;
   color: white;
+}
+@media (max-width: 600px) {
+  .Skills .container .boxes .box .top span {
+    font-size: 14px;
+  }
 }
 .Skills .container .boxes .box .top b {
   font-weight: normal;
@@ -1057,26 +1077,36 @@ footer .last a {
   width: 100%;
   position: relative;
   overflow: hidden;
-  height: 12px;
-  background-color: #222;
-  padding: 5px;
-  border-radius: 10px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid white;
   overflow-x: hidden;
 }
 .Skills .container .boxes .box .line b {
-  height: calc(100% - 6px);
+  height: 100%;
   position: absolute;
-  left: 3px;
-  top: 3px;
-  background: linear-gradient(to left, green, var(--main1));
-  box-shadow: 0 1px 15px green inset;
-  border-radius: 15px;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to right, green, var(--main1));
+  border-radius: 0 20px 20px 0;
+  border-right: 3px solid #333;
+}
+.Skills .container .boxes .box .line b::after {
+  content: attr(data-width);
+  position: absolute;
+  right: 10px;
+  font-size: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: black;
+  font-weight: 100;
 }
 .Skills .container .boxes .box .line span {
   width: calc(100% - 6px);
   height: 50%;
   position: absolute;
-  left: 3px;
+  left: 0;
   top: 50%;
   background-color: #fff;
   transform: translateY(-50%);
@@ -1087,8 +1117,25 @@ footer .last a {
   flex-direction: column;
   gap: 20px;
   padding: 10px 30px 10px 30px;
-  margin-top: 5px;
+  margin-top: 25px;
 }
+.Skills .container .boxes .box ul li {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+@media (max-width: 600px) {
+  .Skills .container .boxes .box ul li {
+    grid-template-columns: 100px 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .Skills .container .boxes .box ul li {
+    grid-template-columns: 1fr;
+  }
+}
+
 #projects {
   padding: 100px 0;
   background-image: url("../assets/dots.png");
@@ -1432,13 +1479,14 @@ footer .last a {
   margin: 30px 0;
   max-width: 700px;
   margin: 0 auto 0;
-  background-color: rgba(17, 17, 17, 0.3333333333);
+  background-color: rgba(255, 255, 255, 0.023);
   display: grid;
   grid-template-columns: 400px 1fr;
+  grid-gap: 20px;
   gap: 20px;
   align-items: center;
   padding: 20px;
-  box-shadow: 2px 2px 10px #111;
+  box-shadow: 2px 2px 10px rgba(17, 17, 17, 0.3333333333);
 }
 @media (max-width: 1250px) {
   .Contact .container {
@@ -1541,9 +1589,17 @@ footer .last a {
   all: unset;
   width: 100%;
   outline: none;
-  border: 1px solid var(--border);
+  box-shadow: 2px 2px 10px rgba(17, 17, 17, 0.3333333333);
   padding: 10px;
-  background-color: var(--thired1);
+  background-color: rgba(255, 255, 255, 0.1333333333);
+  color: white;
+  font-size: 20px;
+}
+.Contact .container form input::-moz-placeholder, .Contact .container form textarea::-moz-placeholder {
+  color: #ccc;
+}
+.Contact .container form input::placeholder, .Contact .container form textarea::placeholder {
+  color: #ccc;
 }
 .Contact .container form textarea {
   height: 100px;
@@ -1567,8 +1623,10 @@ footer .last a {
   align-items: center;
   justify-content: center;
   gap: 10px;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   -webkit-clip-path: circle(100% at 50% 50%);
-  clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
   transition: 0.6s;
   position: fixed;
   top: 0;
@@ -1579,8 +1637,8 @@ footer .last a {
   /* Animations */
 }
 .preload.disappear {
-  -webkit-clip-path: circle(0% at 50% 50%);
-          clip-path: circle(0% at 50% 50%);
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
 }
 .preload .loading .icons {
   display: flex;

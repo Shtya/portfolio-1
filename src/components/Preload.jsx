@@ -30,13 +30,13 @@ const Preload = () => {
         </div>
 
         
-        <div className="loading">
+        {/* <div className="loading">
             <div className="icons">
             <i className='bx bxs-chevron-left'></i>
             <span>welcome</span>
             <i className='bx bxs-chevron-right'></i>
             </div>
-        </div>
+        </div> */}
 
 
 
