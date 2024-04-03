@@ -34,6 +34,8 @@ const Skills = () => {
         ]},
         {name:"Github" , persent:"100%"},
     ]
+
+
   return (
     <div className='Skills' id='skills' >
         <div className="container">
@@ -41,15 +43,21 @@ const Skills = () => {
             <div className="boxes">
                 {data.map((ele , index)=>(
                     <div className="box" key={index}>
-                        <div className="top"  >   <span>{ele.name} </span> <b data-aos='slide-right'  style={{left: ele.persent , display : ele.persent == "0%" ? 'none' : 'block' }}> {ele.persent} </b> </div>
-                        <div className="line" style={{opacity : ele.persent == "0%" ? '0' : '1' }} >  <span></span>             <b data-aos='slide-right' style={{width: ele.persent }} > </b> </div>
+                        <div className="top"  >   <span>{ele.name} </span> <b data-aos='slide-right'  style={{left:  `calc(${ele.persent} - 6px)`  , display : ele.persent == "0%" ? 'none' : 'block' }}> {ele.persent} </b> </div>
+                        <div className="line" style={{opacity : ele.persent == "0%" ? '0' : '1' }} >  
+                            <span data-width={ele.persent}  >  </span>             
+                            <b data-aos='slide-right' style={{width: `calc(${ele.persent} - 6px)` }} > </b> 
+                        </div>
 
                         <ul>
                             {
                                 ele.branch?.map((e,idx)=>(
                                     <li key={idx}>
-                                        <div className="top"> <span>{e.name} </span> <b data-aos='slide-right' style={{left: e.persent}} > {e.persent} </b> </div>
-                                        <div className="line">   <span></span>   <b data-aos='slide-right' style={{width: e.persent }} > </b> </div>
+                                        <div className="top"> <span>{e.name} </span> <b data-aos='slide-right' style={{left: `calc(${e.persent} - 6px)` }} > {e.persent} </b> </div>
+                                        <div className="line">   
+                                        <span data-width={e.persent} ></span>   
+                                        <b data-aos='slide-right' style={{width: `calc(${e.persent} - 6px)` }} > </b> 
+                                        </div>
                                     </li>
                                 ))
                             }

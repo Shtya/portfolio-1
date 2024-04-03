@@ -10,6 +10,9 @@ const Preload = () => {
         }, 3000);
     } ,[])
 
+
+
+
   return (
     <div className={`preload ${disappear ? '' : 'disappear'}`} style={{ backgroundImage: `url("${dots.src}")` }} >
 

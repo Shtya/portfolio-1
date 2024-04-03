@@ -35,7 +35,7 @@ const Footer = () => {
         </ul>
 
         <ul>
-            <h3 >Contact Information</h3>
+            <h3 >Information</h3>
             <li > <i className='bx bxs-envelope' ></i> <span style={{textTransform:'lowercase' }}> shtya54@gmail.com </span> </li>
             <li > <i className='bx bxs-phone' ></i> <span> +201551495772 </span> </li>
             <li > <i className='bx bxl-whatsapp' ></i> <span> +201551495772 </span> </li>

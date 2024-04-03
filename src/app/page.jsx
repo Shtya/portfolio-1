@@ -14,6 +14,7 @@ import Preload from '@/components/Preload';
 
 
 const Home = () => {
+  
   return (
     <main>
         <Preload />
@@ -34,3 +35,10 @@ const Home = () => {
 }
 
 export default Home
+
+
+
+
+
+
+

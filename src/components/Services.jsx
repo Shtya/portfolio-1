@@ -10,7 +10,7 @@ const Services = () => {
     const serv = [
         { img : img3 , name:"front-end" , list:['Next js' ,'React js' , 'JavaScript' , 'Blade' , 'BootStrap'] },
         { img : img2 , name:"back-end" , list:[ 'node js' , 'Express js' , 'nest js' , 'php' , 'laravel'] },
-        { img : img5 , name:"seo" , list:['semrush' , 'screaming Frog' , 'write articles' , 'search console'] },
+        { img : img5 , name:"seo" , list:['SEMrush' , 'screaming Frog' , 'write articles' , 'search console'] },
         { img : img1 , name:"DataBase" , list:['mySql' , 'mongodb'] },
         { img : img4 , name:"other" , list:['shopify' , 'wordpress' , 'landing'] },
     ]

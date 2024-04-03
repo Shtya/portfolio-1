@@ -180,12 +180,31 @@ nav .container .ul a {
   letter-spacing: 0;
   width: 100%;
   padding: 10px;
-  transition: 0.4s;
   color: #f5f5f5;
   text-wrap: nowrap;
+  transition: 0.3s;
+  position: relative;
+}
+nav .container .ul a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--main1);
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  transition: 0.4s ease-in-out;
 }
 nav .container .ul a:hover {
-  color: var(--main1);
+  box-shadow: 2px 2px 10px rgba(17, 17, 17, 0.3333333333);
+  color: black;
+}
+nav .container .ul a:hover::after {
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
 }
 nav .container .ul a.active {
   color: #fff;
@@ -204,6 +223,29 @@ nav .container .social {
 }
 nav .container .social a {
   line-height: unset;
+  transition: 0.3s !important;
+  position: relative;
+}
+nav .container .social a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--main1);
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  transition: 0.4s ease-in-out !important;
+}
+nav .container .social a:hover {
+  box-shadow: 2px 2px 10px rgba(17, 17, 17, 0.3333333333);
+  color: black;
+}
+nav .container .social a:hover::after {
+  -webkit-clip-path: circle(100% at 50% 50%);
+          clip-path: circle(100% at 50% 50%);
 }
 nav .container .social a i:hover {
   scale: 0.9;
@@ -425,17 +467,16 @@ footer .container > ul ul a {
   padding-left: 0 !important;
 }
 footer .container > ul ul i {
-  width: 50px;
-  height: 50px;
-  background-color: var(--thired1);
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 25px;
+  font-size: 20px;
   cursor: pointer;
   transition: 0.3s !important;
   position: relative;
-  border: 3px double;
+  border: 2px double;
   border-radius: 50%;
   background-color: var(--main1);
 }
@@ -453,9 +494,11 @@ footer .container > ul li {
   cursor: pointer;
 }
 footer .container > ul li i {
-  font-size: 25px;
+  font-size: 20px;
   background-color: var(--main1);
-  border: 3px double;
+  border: 1px double;
+  padding: 5px;
+  border-radius: 50%;
 }
 @media (max-width: 950px) {
   footer .container > ul li i {
@@ -1014,24 +1057,30 @@ footer .last a {
   width: 100%;
   position: relative;
   overflow: hidden;
-  height: 10px;
+  height: 12px;
+  background-color: #222;
+  padding: 5px;
+  border-radius: 10px;
+  overflow-x: hidden;
 }
 .Skills .container .boxes .box .line b {
-  height: 100%;
+  height: calc(100% - 6px);
   position: absolute;
-  left: 0;
-  top: 0;
+  left: 3px;
+  top: 3px;
   background: linear-gradient(to left, green, var(--main1));
   box-shadow: 0 1px 15px green inset;
+  border-radius: 15px;
 }
 .Skills .container .boxes .box .line span {
-  width: 100%;
+  width: calc(100% - 6px);
   height: 50%;
   position: absolute;
-  left: 0;
+  left: 3px;
   top: 50%;
   background-color: #fff;
   transform: translateY(-50%);
+  border-radius: 10px;
 }
 .Skills .container .boxes .box ul {
   display: flex;
@@ -1049,7 +1098,7 @@ footer .last a {
 }
 #projects .container p {
   text-align: center;
-  margin: 10px 0 40px;
+  margin: 10px 0 25px;
   font-size: 20px;
 }
 #projects .container .header {
@@ -1090,7 +1139,7 @@ footer .last a {
 }
 #projects .container .header h4.active {
   background-color: var(--green);
-  height: 70%;
+  height: 90%;
   top: 50%;
 }
 @media (max-width: 800px) {
@@ -1431,9 +1480,6 @@ footer .last a {
   left: -200px;
   border: 6px double;
 }
-.Contact .container .box * {
-  color: black;
-}
 @media (max-width: 600px) {
   .Contact .container .box {
     width: calc(100% + 20px) !important;
@@ -1446,12 +1492,16 @@ footer .last a {
   text-shadow: 0 0 2px;
   text-transform: uppercase;
   text-align: center;
+  color: #fff;
+  text-shadow: 0 0 2px;
 }
 .Contact .container .box p {
   font-size: 18px;
   font-weight: 500;
   margin: 10px 0;
   text-align: center;
+  color: #fff;
+  text-shadow: 0 0 2px;
 }
 .Contact .container .box .group {
   display: flex;
@@ -1460,11 +1510,18 @@ footer .last a {
 }
 .Contact .container .box .group i {
   font-size: 30px;
-  color: #333;
+  color: #fff;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(17, 17, 17, 0.1333333333);
+  border: 1px solid rgba(17, 17, 17, 0.1333333333);
+  border-radius: 50%;
+  background: rgba(34, 34, 34, 0.0784313725);
 }
 .Contact .container .box .group span {
   font-size: 18px;
   font-weight: 500;
+  color: white;
+  text-shadow: 0 0 2px;
 }
 .Contact .container form {
   display: flex;
@@ -1495,9 +1552,10 @@ footer .last a {
   cursor: pointer;
   transition: 0.3s;
   text-align: center;
+  text-transform: uppercase;
 }
 .Contact .container form input[type=submit]:hover {
-  background-color: var(--blue);
+  background-color: var(--main1);
   opacity: 0.8;
 }
 
@@ -1993,19 +2051,82 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 1.1rem;
+  width: 15px;
   background-color: var(--border);
-  box-shadow: 0 0 13px var(--blue) inset;
+  box-shadow: 0 0 100px #181818 inset;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: var(--fourth);
+  border-radius: 0;
+  background-color: var(--main1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
   cursor: pointer;
-  background-color: var(--secondary);
+  background-color: #333;
+}
+
+.show-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(34, 34, 34, 0.5333333333);
+  z-index: 100000000000000000;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  transition: 0.5s;
+  -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+          clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+}
+.show-image.show {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  animation: damping 1s ease 1;
+}
+@keyframes damping {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-100px);
+  }
+  50% {
+    transform: translateY(150px);
+  }
+  75% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.show-image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 20px;
+  filter: drop-shadow(2px 4px 6px rgba(255, 255, 255, 0.5333333333));
+}
+.show-image i {
+  width: 50px;
+  height: 50px;
+  right: 20px;
+  top: 20px;
+  background-color: white;
+  color: black;
+  font-size: 30px;
+  transition: 0.3s;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.show-image i:hover {
+  scale: 0.95;
 }
 
 .btn {
