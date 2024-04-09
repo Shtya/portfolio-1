@@ -902,7 +902,7 @@ footer .last a {
 .Services .container .boxes {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 @media (max-width: 1300px) {
@@ -963,19 +963,39 @@ footer .last a {
   }
 }
 .Services .container .boxes .box {
-  background-color: var(--thired1);
-  height: 100%;
+  height: 500px;
   box-shadow: 2px 2px 10px rgba(17, 17, 17, 0.5333333333), 2px 2px 3px #111 inset;
   padding: 20px 20px 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   position: relative;
+  background-size: cover !important;
+  background-position: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.2666666667);
+  cursor: pointer;
+}
+.Services .container .boxes .box:hover img, .Services .container .boxes .box:hover span, .Services .container .boxes .box:hover ul {
+  transform: translateY(-30px);
+}
+.Services .container .boxes .box::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.4);
+  z-index: -1;
+  top: 0;
+  left: 0;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
 }
 .Services .container .boxes .box img {
   width: 100px;
   height: 100px;
+  transition: 0.5s;
   filter: drop-shadow(0 0 4px #28d07e);
 }
 .Services .container .boxes .box span {
@@ -986,19 +1006,21 @@ footer .last a {
   color: var(--main1);
   font-weight: 600;
   -webkit-text-stroke: 1px;
+  transition: 0.5s;
 }
 .Services .container .boxes .box ul {
   border-top: 1px solid rgba(255, 255, 255, 0.5333333333);
   width: 80%;
   margin: 0 auto;
   padding: 15px 0 10px 15px;
+  transition: 0.5s;
 }
 .Services .container .boxes .box ul li {
   list-style-type: circle;
   margin-bottom: 5px;
   font-size: 18px;
   text-transform: capitalize;
-  color: #ccc;
+  color: #fff;
   letter-spacing: 2px;
 }
 
@@ -1090,7 +1112,7 @@ footer .last a {
   top: 0;
   background: linear-gradient(to right, green, var(--main1));
   border-radius: 0 20px 20px 0;
-  border-right: 3px solid #333;
+  border-right: 3px solid rgba(255, 255, 255, 0.3333333333);
 }
 .Skills .container .boxes .box .line b::after {
   content: attr(data-width);

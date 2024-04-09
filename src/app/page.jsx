@@ -17,7 +17,7 @@ const Home = () => {
   
   return (
     <main>
-        <Preload />
+        {/* <Preload /> */}
         <Nav />
         <Whats />
         <Hero2 />

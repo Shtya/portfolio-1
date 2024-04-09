@@ -4,6 +4,8 @@ import Image from 'next/image'
 import Img from '@/assets/me.jpg'
 
 
+
+
 const About = () => {
   return (
     <div className='about' id='about'  >
